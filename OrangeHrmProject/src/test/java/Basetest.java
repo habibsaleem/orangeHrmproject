@@ -1,8 +1,10 @@
 import browser.Browser;
 import browser.Info;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pages.Loginpage;
 
 import java.time.Duration;
 
@@ -18,7 +20,11 @@ public class Basetest {
     }
     @AfterMethod
     public  void closeBrowser(){
-       // driver.close();
-        //driver.quit();
+        driver.close();
+        driver.quit();
+    }
+
+    public Loginpage startLoginpage () {
+        return PageFactory.initElements(driver,Loginpage.class);
     }
 }

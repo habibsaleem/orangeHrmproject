@@ -15,7 +15,16 @@ public class Firsttest extends Basetest {
 @Test
     public void firstTest01(){
 
-    PageFactory.initElements(driver, Loginpage.class).loginPimpage();
-
+    startLoginpage().loginPimpage();
+    try {
+        Thread.sleep(5000);
+    } catch (InterruptedException e) {
+        throw new RuntimeException(e);
     }
+
+}
+     @Test
+         public void test02 () {
+
+     }
 }
